@@ -1,10 +1,14 @@
 import { useEffect } from "react"
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 export const Navbar = ({menuOpen, setMenuOpen}) => {
 
     useEffect(() => {
         document.body.style.overflow = menuOpen ? "hidden" : ""
     }, [menuOpen]);
+
+    const githuburl = "https://github.com/J0Hn-git";
+    const linkedinurl = "https://www.linkedin.com/in/john-joji-35a02231a/";
 
     return <nav className="fixed top-0 w-full z-40 bg-[rgba(10, 10, 10, 0.8)] backdrop-blur-lg border-b border-white/10 shadow-lg">
     
@@ -54,6 +58,24 @@ export const Navbar = ({menuOpen, setMenuOpen}) => {
                         {" "}
                         Contact{" "}
                     </a>
+                    <div className="flex space-x-4 pl-4 border-l border-white/20">
+                    <a href={githuburl}
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       className="text-gray-300 hover:text-blue-500 transition duration-300"
+                       aria-label="GitHub Profile"
+                    >
+                        <FaGithub size={20} />
+                    </a>    
+                    <a href={linkedinurl}
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       className="text-gray-300 hover: text-blue-500 transition duration-300"
+                       aria-label="LinkedIn Profile"
+                    >
+                        <FaLinkedin size={20} />
+                    </a>
+                    </div>
 
                 </div>
         </div>
